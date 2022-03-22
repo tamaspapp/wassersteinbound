@@ -10,8 +10,7 @@ install.packages("devtools")
 devtools::install_github("tamaspapp/wassersteinbound")
 ```
 
-
-The `/inst/` directory contains the scripts which reproduce the experiments:
+The `/inst/` directory (found at the top level of the package installation directory) contains all of the scripts which reproduce the experiments:
 1. Run all scripts in directories `./reproduceprelim`, `./reproducejack` and `./reproduceoverdispmcmc`
 to replicate the results in Sections 2.4, 3.3 and 4.1.2 (and its associated appendix). 
 2. Run `./reproducegibbs/gibbs_run.R` to replicate the results in Section 4.4.1. 
