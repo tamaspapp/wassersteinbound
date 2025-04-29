@@ -1,18 +1,14 @@
-This repository contains the R package `wassersteinbound` which reproduces the numerical experiments in 
-"Bounds on Wasserstein distances between continuous distributions using independent samples" (2022)
-by Tamas Papp and Chris Sherlock.
-
+Implements the methods and reproduces the experiments in the paper ["Centered plug-in estimation of Wasserstein distances"](https://arxiv.org/abs/2203.11627) by Tamas Papp and Chris Sherlock.
 
 The package can be installed by using `devtools`:
 
 ```
-install.packages("devtools")
 devtools::install_github("tamaspapp/wassersteinbound")
 ```
 
-The `/inst/` directory (found at the top level of the package installation directory) contains all of the scripts which reproduce the experiments:
-1. Run all scripts in directories `./reproduceprelim`, `./reproducejack` and `./reproduceoverdispmcmc`
-to replicate the results in Sections 2.4, 3.3 and 4.1.2 (and its associated appendix). 
-2. Run `./reproducegibbs/gibbs_run.R` to replicate the results in Section 4.4.1. 
-3. Run `./reproduceulamalascaling/_run.R` to replicate the results in Section 4.4.2 and the associated appendix.
-4. Run `./reproducesvm/_run.R` to replicate the results in Section 4.4.3 and the associated appendix.
+The `/inst/` directory contains all the scripts to reproduce the experiments:
+1. See `./reproduce_preliminary` for Sections 2 and 3.
+2. See `./reproduce_synthetic_mcmc` for Sections 4.4.1 and 5.4.1.
+3. See `./reproduce_talldata` for Section 4.4.2.
+4. See `./reproduce_halft` for Section 4.4.3.
+5. See `./reproduce_svm` for Section 5.4.2.

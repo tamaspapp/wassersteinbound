@@ -8,7 +8,5 @@ BoostrapVarianceBasic(x, R)
 }
 \description{
 x = vector, data to be resampled
-}
-\details{
 R = number of bootstrap replicates
 }

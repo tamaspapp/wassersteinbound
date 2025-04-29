@@ -11,450 +11,599 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// Flapjack
-Rcpp::List Flapjack(const Rcpp::NumericMatrix& C);
-RcppExport SEXP _wassersteinbound_Flapjack(SEXP CSEXP) {
+// assignment_squared_euclidean_toms1015_cpp
+Rcpp::List assignment_squared_euclidean_toms1015_cpp(const Eigen::Map<Eigen::MatrixXd>& x, const Eigen::Map<Eigen::MatrixXd>& y, const bool& estimate_epsilon);
+RcppExport SEXP _wassersteinbound_assignment_squared_euclidean_toms1015_cpp(SEXP xSEXP, SEXP ySEXP, SEXP estimate_epsilonSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Rcpp::NumericMatrix& >::type C(CSEXP);
-    rcpp_result_gen = Rcpp::wrap(Flapjack(C));
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< const bool& >::type estimate_epsilon(estimate_epsilonSEXP);
+    rcpp_result_gen = Rcpp::wrap(assignment_squared_euclidean_toms1015_cpp(x, y, estimate_epsilon));
     return rcpp_result_gen;
 END_RCPP
 }
-// SimulateGibbs_ar1
-Rcpp::List SimulateGibbs_ar1(const Eigen::Map<Eigen::ArrayXd>& x0, const double& sd, const double& c, const int& iter_store_x, const int& iter_final_x, const int& thin);
-RcppExport SEXP _wassersteinbound_SimulateGibbs_ar1(SEXP x0SEXP, SEXP sdSEXP, SEXP cSEXP, SEXP iter_store_xSEXP, SEXP iter_final_xSEXP, SEXP thinSEXP) {
+// assignment_squared_euclidean_networkflow_cpp
+Rcpp::List assignment_squared_euclidean_networkflow_cpp(const Eigen::Map<Eigen::MatrixXd>& x, const Eigen::Map<Eigen::MatrixXd>& y, const bool& compute_assignment);
+RcppExport SEXP _wassersteinbound_assignment_squared_euclidean_networkflow_cpp(SEXP xSEXP, SEXP ySEXP, SEXP compute_assignmentSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< const bool& >::type compute_assignment(compute_assignmentSEXP);
+    rcpp_result_gen = Rcpp::wrap(assignment_squared_euclidean_networkflow_cpp(x, y, compute_assignment));
+    return rcpp_result_gen;
+END_RCPP
+}
+// assignment_squared_euclidean_jackknife_cpp
+Rcpp::List assignment_squared_euclidean_jackknife_cpp(const Eigen::Map<Eigen::MatrixXd>& x, const Eigen::Map<Eigen::MatrixXd>& y, const bool& estimate_epsilon);
+RcppExport SEXP _wassersteinbound_assignment_squared_euclidean_jackknife_cpp(SEXP xSEXP, SEXP ySEXP, SEXP estimate_epsilonSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< const bool& >::type estimate_epsilon(estimate_epsilonSEXP);
+    rcpp_result_gen = Rcpp::wrap(assignment_squared_euclidean_jackknife_cpp(x, y, estimate_epsilon));
+    return rcpp_result_gen;
+END_RCPP
+}
+// assignment_squared_euclidean_jackknife_1d_cpp
+Rcpp::List assignment_squared_euclidean_jackknife_1d_cpp(const Rcpp::NumericVector& x_sorted, const Rcpp::NumericVector& y_sorted, const Rcpp::IntegerVector& inv_order_x, const Rcpp::IntegerVector& inv_order_y);
+RcppExport SEXP _wassersteinbound_assignment_squared_euclidean_jackknife_1d_cpp(SEXP x_sortedSEXP, SEXP y_sortedSEXP, SEXP inv_order_xSEXP, SEXP inv_order_ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type x_sorted(x_sortedSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type y_sorted(y_sortedSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type inv_order_x(inv_order_xSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type inv_order_y(inv_order_ySEXP);
+    rcpp_result_gen = Rcpp::wrap(assignment_squared_euclidean_jackknife_1d_cpp(x_sorted, y_sorted, inv_order_x, inv_order_y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// EvaluateSquaredCost
+Eigen::MatrixXd EvaluateSquaredCost(const Eigen::Map<Eigen::MatrixXd>& x, const Eigen::Map<Eigen::MatrixXd>& y);
+RcppExport SEXP _wassersteinbound_EvaluateSquaredCost(SEXP xSEXP, SEXP ySEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type y(ySEXP);
+    rcpp_result_gen = Rcpp::wrap(EvaluateSquaredCost(x, y));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gibbs_periodicAR1_cpp
+Rcpp::List gibbs_periodicAR1_cpp(const Eigen::Map<Eigen::ArrayXd>& x0, const double& sd, const double& c, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_gibbs_periodicAR1_cpp(SEXP x0SEXP, SEXP sdSEXP, SEXP cSEXP, SEXP iterSEXP, SEXP thinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd>& >::type x0(x0SEXP);
     Rcpp::traits::input_parameter< const double& >::type sd(sdSEXP);
     Rcpp::traits::input_parameter< const double& >::type c(cSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_store_x(iter_store_xSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_final_x(iter_final_xSEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
     Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateGibbs_ar1(x0, sd, c, iter_store_x, iter_final_x, thin));
+    rcpp_result_gen = Rcpp::wrap(gibbs_periodicAR1_cpp(x0, sd, c, iter, thin));
     return rcpp_result_gen;
 END_RCPP
 }
-// SimulateReflMaxGibbs_ar1
-Rcpp::List SimulateReflMaxGibbs_ar1(const Eigen::Map<Eigen::ArrayXd>& x0, const Eigen::Map<Eigen::ArrayXd>& y0, const double& sd, const double& c, const int& L, const int& iter_store_x, const int& iter_final_x, const int& thin);
-RcppExport SEXP _wassersteinbound_SimulateReflMaxGibbs_ar1(SEXP x0SEXP, SEXP y0SEXP, SEXP sdSEXP, SEXP cSEXP, SEXP LSEXP, SEXP iter_store_xSEXP, SEXP iter_final_xSEXP, SEXP thinSEXP) {
+// gibbs_periodicAR1_CRN_cpp
+Rcpp::List gibbs_periodicAR1_CRN_cpp(const Eigen::Map<Eigen::ArrayXd>& x0, const Eigen::Map<Eigen::ArrayXd>& y0, const double& sd, const double& c, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_gibbs_periodicAR1_CRN_cpp(SEXP x0SEXP, SEXP y0SEXP, SEXP sdSEXP, SEXP cSEXP, SEXP iterSEXP, SEXP thinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd>& >::type x0(x0SEXP);
     Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd>& >::type y0(y0SEXP);
     Rcpp::traits::input_parameter< const double& >::type sd(sdSEXP);
     Rcpp::traits::input_parameter< const double& >::type c(cSEXP);
-    Rcpp::traits::input_parameter< const int& >::type L(LSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_store_x(iter_store_xSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_final_x(iter_final_xSEXP);
-    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateReflMaxGibbs_ar1(x0, y0, sd, c, L, iter_store_x, iter_final_x, thin));
-    return rcpp_result_gen;
-END_RCPP
-}
-// EvaluateJackknife1d
-Rcpp::List EvaluateJackknife1d(Rcpp::NumericVector x_sorted, Rcpp::NumericVector y_sorted, Rcpp::IntegerVector inv_order_x, Rcpp::IntegerVector inv_order_y);
-RcppExport SEXP _wassersteinbound_EvaluateJackknife1d(SEXP x_sortedSEXP, SEXP y_sortedSEXP, SEXP inv_order_xSEXP, SEXP inv_order_ySEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type x_sorted(x_sortedSEXP);
-    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type y_sorted(y_sortedSEXP);
-    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type inv_order_x(inv_order_xSEXP);
-    Rcpp::traits::input_parameter< Rcpp::IntegerVector >::type inv_order_y(inv_order_ySEXP);
-    rcpp_result_gen = Rcpp::wrap(EvaluateJackknife1d(x_sorted, y_sorted, inv_order_x, inv_order_y));
-    return rcpp_result_gen;
-END_RCPP
-}
-// RWMLogistic
-Rcpp::List RWMLogistic(const Eigen::Map<Eigen::VectorXd>& x0, const double& h, const int& iter);
-RcppExport SEXP _wassersteinbound_RWMLogistic(SEXP x0SEXP, SEXP hSEXP, SEXP iterSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
-    rcpp_result_gen = Rcpp::wrap(RWMLogistic(x0, h, iter));
-    return rcpp_result_gen;
-END_RCPP
-}
-// MALALogistic
-Rcpp::List MALALogistic(const Eigen::Map<Eigen::VectorXd>& x0, const double& h, const int& iter);
-RcppExport SEXP _wassersteinbound_MALALogistic(SEXP x0SEXP, SEXP hSEXP, SEXP iterSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
-    rcpp_result_gen = Rcpp::wrap(MALALogistic(x0, h, iter));
-    return rcpp_result_gen;
-END_RCPP
-}
-// SimulateULA_scaling
-Rcpp::List SimulateULA_scaling(const Eigen::Map<Eigen::SparseMatrix<double>>& Sigma_inv, const Eigen::Map<Eigen::SparseMatrix<double>>& U, const double& disp, const double& h, const int& iter, const int& thin);
-RcppExport SEXP _wassersteinbound_SimulateULA_scaling(SEXP Sigma_invSEXP, SEXP USEXP, SEXP dispSEXP, SEXP hSEXP, SEXP iterSEXP, SEXP thinSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::SparseMatrix<double>>& >::type Sigma_inv(Sigma_invSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::SparseMatrix<double>>& >::type U(USEXP);
-    Rcpp::traits::input_parameter< const double& >::type disp(dispSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
     Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
     Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateULA_scaling(Sigma_inv, U, disp, h, iter, thin));
+    rcpp_result_gen = Rcpp::wrap(gibbs_periodicAR1_CRN_cpp(x0, y0, sd, c, iter, thin));
     return rcpp_result_gen;
 END_RCPP
 }
-// SimulateMALA_scaling
-Rcpp::List SimulateMALA_scaling(const Eigen::Map<Eigen::SparseMatrix<double>>& Sigma_inv, const Eigen::Map<Eigen::SparseMatrix<double>>& U, const double& disp, const double& h, const int& iter, const int& thin);
-RcppExport SEXP _wassersteinbound_SimulateMALA_scaling(SEXP Sigma_invSEXP, SEXP USEXP, SEXP dispSEXP, SEXP hSEXP, SEXP iterSEXP, SEXP thinSEXP) {
+// gibbs_periodicAR1_ReflMax_cpp
+Rcpp::List gibbs_periodicAR1_ReflMax_cpp(const Eigen::Map<Eigen::ArrayXd>& x0, const Eigen::Map<Eigen::ArrayXd>& y0, const double& sd, const double& c, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_gibbs_periodicAR1_ReflMax_cpp(SEXP x0SEXP, SEXP y0SEXP, SEXP sdSEXP, SEXP cSEXP, SEXP iterSEXP, SEXP thinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::SparseMatrix<double>>& >::type Sigma_inv(Sigma_invSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::SparseMatrix<double>>& >::type U(USEXP);
-    Rcpp::traits::input_parameter< const double& >::type disp(dispSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd>& >::type y0(y0SEXP);
+    Rcpp::traits::input_parameter< const double& >::type sd(sdSEXP);
+    Rcpp::traits::input_parameter< const double& >::type c(cSEXP);
     Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
     Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateMALA_scaling(Sigma_inv, U, disp, h, iter, thin));
+    rcpp_result_gen = Rcpp::wrap(gibbs_periodicAR1_ReflMax_cpp(x0, y0, sd, c, iter, thin));
     return rcpp_result_gen;
 END_RCPP
 }
-// SimulateReflMaxULA_scaling
-Rcpp::List SimulateReflMaxULA_scaling(const Eigen::Map<Eigen::SparseMatrix<double>>& Sigma_inv, const Eigen::Map<Eigen::SparseMatrix<double>>& U, const double& disp, const double& h, const int& L, const int& iter, const int& iter_reference, const int& thin);
-RcppExport SEXP _wassersteinbound_SimulateReflMaxULA_scaling(SEXP Sigma_invSEXP, SEXP USEXP, SEXP dispSEXP, SEXP hSEXP, SEXP LSEXP, SEXP iterSEXP, SEXP iter_referenceSEXP, SEXP thinSEXP) {
+// low_inc_gamma_cpp
+Rcpp::NumericVector low_inc_gamma_cpp(const double& rate, const Rcpp::NumericVector& upper_truncation);
+RcppExport SEXP _wassersteinbound_low_inc_gamma_cpp(SEXP rateSEXP, SEXP upper_truncationSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::SparseMatrix<double>>& >::type Sigma_inv(Sigma_invSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::SparseMatrix<double>>& >::type U(USEXP);
-    Rcpp::traits::input_parameter< const double& >::type disp(dispSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type L(LSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_reference(iter_referenceSEXP);
-    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateReflMaxULA_scaling(Sigma_inv, U, disp, h, L, iter, iter_reference, thin));
+    Rcpp::traits::input_parameter< const double& >::type rate(rateSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type upper_truncation(upper_truncationSEXP);
+    rcpp_result_gen = Rcpp::wrap(low_inc_gamma_cpp(rate, upper_truncation));
     return rcpp_result_gen;
 END_RCPP
 }
-// SimulateReflMaxMALA_scaling
-Rcpp::List SimulateReflMaxMALA_scaling(const Eigen::Map<Eigen::SparseMatrix<double>>& Sigma_inv, const Eigen::Map<Eigen::SparseMatrix<double>>& U, const double& disp, const double& h, const int& L, const int& iter, const int& iter_reference, const int& thin);
-RcppExport SEXP _wassersteinbound_SimulateReflMaxMALA_scaling(SEXP Sigma_invSEXP, SEXP USEXP, SEXP dispSEXP, SEXP hSEXP, SEXP LSEXP, SEXP iterSEXP, SEXP iter_referenceSEXP, SEXP thinSEXP) {
+// low_inc_gamma_inv_cpp
+Rcpp::NumericVector low_inc_gamma_inv_cpp(const double& rate, const Rcpp::NumericVector& p);
+RcppExport SEXP _wassersteinbound_low_inc_gamma_inv_cpp(SEXP rateSEXP, SEXP pSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::SparseMatrix<double>>& >::type Sigma_inv(Sigma_invSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::SparseMatrix<double>>& >::type U(USEXP);
-    Rcpp::traits::input_parameter< const double& >::type disp(dispSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type L(LSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_reference(iter_referenceSEXP);
-    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateReflMaxMALA_scaling(Sigma_inv, U, disp, h, L, iter, iter_reference, thin));
+    Rcpp::traits::input_parameter< const double& >::type rate(rateSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::NumericVector& >::type p(pSEXP);
+    rcpp_result_gen = Rcpp::wrap(low_inc_gamma_inv_cpp(rate, p));
     return rcpp_result_gen;
 END_RCPP
 }
-// RWMMixture1d
-Rcpp::List RWMMixture1d(const double& x0, const Eigen::Map<Eigen::ArrayXd>& p, const Eigen::Map<Eigen::ArrayXd>& mu, const Eigen::Map<Eigen::ArrayXd>& sigma, const double& h, const int& iter);
-RcppExport SEXP _wassersteinbound_RWMMixture1d(SEXP x0SEXP, SEXP pSEXP, SEXP muSEXP, SEXP sigmaSEXP, SEXP hSEXP, SEXP iterSEXP) {
+// cpp_prod
+Eigen::MatrixXd cpp_prod(const Eigen::Map<Eigen::MatrixXd>& X, const Eigen::Map<Eigen::MatrixXd>& Y);
+RcppExport SEXP _wassersteinbound_cpp_prod(SEXP XSEXP, SEXP YSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const double& >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd>& >::type p(pSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd>& >::type mu(muSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd>& >::type sigma(sigmaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
-    rcpp_result_gen = Rcpp::wrap(RWMMixture1d(x0, p, mu, sigma, h, iter));
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type X(XSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type Y(YSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_prod(X, Y));
     return rcpp_result_gen;
 END_RCPP
 }
-// MALAMixture1d
-Rcpp::List MALAMixture1d(const double& x0, const Eigen::Map<Eigen::ArrayXd>& p, const Eigen::Map<Eigen::ArrayXd>& mu, const Eigen::Map<Eigen::ArrayXd>& sigma, const double& h, const int& iter);
-RcppExport SEXP _wassersteinbound_MALAMixture1d(SEXP x0SEXP, SEXP pSEXP, SEXP muSEXP, SEXP sigmaSEXP, SEXP hSEXP, SEXP iterSEXP) {
+// cpp_crossprod
+Eigen::MatrixXd cpp_crossprod(const Eigen::Map<Eigen::MatrixXd>& X);
+RcppExport SEXP _wassersteinbound_cpp_crossprod(SEXP XSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const double& >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd>& >::type p(pSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd>& >::type mu(muSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd>& >::type sigma(sigmaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
-    rcpp_result_gen = Rcpp::wrap(MALAMixture1d(x0, p, mu, sigma, h, iter));
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_crossprod(X));
     return rcpp_result_gen;
 END_RCPP
 }
-// SolveAssignmentNetworkflow
-double SolveAssignmentNetworkflow(const Rcpp::NumericMatrix& C);
-RcppExport SEXP _wassersteinbound_SolveAssignmentNetworkflow(SEXP CSEXP) {
+// cpp_cov
+Eigen::MatrixXd cpp_cov(const Eigen::Map<Eigen::MatrixXd>& X);
+RcppExport SEXP _wassersteinbound_cpp_cov(SEXP XSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const Rcpp::NumericMatrix& >::type C(CSEXP);
-    rcpp_result_gen = Rcpp::wrap(SolveAssignmentNetworkflow(C));
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(cpp_cov(X));
     return rcpp_result_gen;
 END_RCPP
 }
-// SetSeed_cpp
-void SetSeed_cpp(const int& seed, const int& stream);
-RcppExport SEXP _wassersteinbound_SetSeed_cpp(SEXP seedSEXP, SEXP streamSEXP) {
+// SetSeed_pcg32
+void SetSeed_pcg32(const int& seed, const int& stream);
+RcppExport SEXP _wassersteinbound_SetSeed_pcg32(SEXP seedSEXP, SEXP streamSEXP) {
 BEGIN_RCPP
     Rcpp::traits::input_parameter< const int& >::type seed(seedSEXP);
     Rcpp::traits::input_parameter< const int& >::type stream(streamSEXP);
-    SetSeed_cpp(seed, stream);
+    SetSeed_pcg32(seed, stream);
     return R_NilValue;
 END_RCPP
 }
-// EvaluateSquaredCost
-Eigen::ArrayXXd EvaluateSquaredCost(const Eigen::Map<Eigen::MatrixXd>& x, const Eigen::Map<Eigen::MatrixXd>& y, const int& nthreads);
-RcppExport SEXP _wassersteinbound_EvaluateSquaredCost(SEXP xSEXP, SEXP ySEXP, SEXP nthreadsSEXP) {
+// rwm_cpp
+Rcpp::List rwm_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& theta0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_rwm_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP theta0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type x(xSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type y(ySEXP);
-    Rcpp::traits::input_parameter< const int& >::type nthreads(nthreadsSEXP);
-    rcpp_result_gen = Rcpp::wrap(EvaluateSquaredCost(x, y, nthreads));
-    return rcpp_result_gen;
-END_RCPP
-}
-// RWMStdGaussian
-Rcpp::List RWMStdGaussian(const Eigen::Map<Eigen::VectorXd>& x0, const double& h, const int& iter);
-RcppExport SEXP _wassersteinbound_RWMStdGaussian(SEXP x0SEXP, SEXP hSEXP, SEXP iterSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type theta0(theta0SEXP);
     Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
-    rcpp_result_gen = Rcpp::wrap(RWMStdGaussian(x0, h, iter));
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(rwm_cpp(target_params, sampler_params, theta0, iter, thin));
     return rcpp_result_gen;
 END_RCPP
 }
-// MALAStdGaussian
-Rcpp::List MALAStdGaussian(const Eigen::Map<Eigen::VectorXd>& x0, const double& h, const int& iter);
-RcppExport SEXP _wassersteinbound_MALAStdGaussian(SEXP x0SEXP, SEXP hSEXP, SEXP iterSEXP) {
+// mala_cpp
+Rcpp::List mala_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& theta0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_mala_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP theta0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type theta0(theta0SEXP);
     Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
-    rcpp_result_gen = Rcpp::wrap(MALAStdGaussian(x0, h, iter));
-    return rcpp_result_gen;
-END_RCPP
-}
-// SampleLatentVariables
-Rcpp::NumericVector SampleLatentVariables(int T, double sig, double phi);
-RcppExport SEXP _wassersteinbound_SampleLatentVariables(SEXP TSEXP, SEXP sigSEXP, SEXP phiSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< int >::type T(TSEXP);
-    Rcpp::traits::input_parameter< double >::type sig(sigSEXP);
-    Rcpp::traits::input_parameter< double >::type phi(phiSEXP);
-    rcpp_result_gen = Rcpp::wrap(SampleLatentVariables(T, sig, phi));
-    return rcpp_result_gen;
-END_RCPP
-}
-// SimulateRWM_SVM
-Rcpp::List SimulateRWM_SVM(const Eigen::Map<Eigen::ArrayXd> x0, const Eigen::Map<Eigen::ArrayXd> y, const double& beta, const double& sigma, const double& phi, const double& h, const int& iter_store_x, const int& iter_final_x, const int& thin);
-RcppExport SEXP _wassersteinbound_SimulateRWM_SVM(SEXP x0SEXP, SEXP ySEXP, SEXP betaSEXP, SEXP sigmaSEXP, SEXP phiSEXP, SEXP hSEXP, SEXP iter_store_xSEXP, SEXP iter_final_xSEXP, SEXP thinSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type y(ySEXP);
-    Rcpp::traits::input_parameter< const double& >::type beta(betaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type sigma(sigmaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type phi(phiSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_store_x(iter_store_xSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_final_x(iter_final_xSEXP);
     Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateRWM_SVM(x0, y, beta, sigma, phi, h, iter_store_x, iter_final_x, thin));
+    rcpp_result_gen = Rcpp::wrap(mala_cpp(target_params, sampler_params, theta0, iter, thin));
     return rcpp_result_gen;
 END_RCPP
 }
-// SimulateReflMaxRWM_SVM
-Rcpp::List SimulateReflMaxRWM_SVM(const Eigen::Map<Eigen::ArrayXd> x0, const Eigen::Map<Eigen::ArrayXd> y0, const Eigen::Map<Eigen::ArrayXd> y_data, const double& beta, const double& sigma, const double& phi, const double& h, const int& L, const int& iter_store_x, const int& iter_final_x, const int& thin);
-RcppExport SEXP _wassersteinbound_SimulateReflMaxRWM_SVM(SEXP x0SEXP, SEXP y0SEXP, SEXP y_dataSEXP, SEXP betaSEXP, SEXP sigmaSEXP, SEXP phiSEXP, SEXP hSEXP, SEXP LSEXP, SEXP iter_store_xSEXP, SEXP iter_final_xSEXP, SEXP thinSEXP) {
+// ula_cpp
+Rcpp::List ula_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& theta0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_ula_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP theta0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type y0(y0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type y_data(y_dataSEXP);
-    Rcpp::traits::input_parameter< const double& >::type beta(betaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type sigma(sigmaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type phi(phiSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type L(LSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_store_x(iter_store_xSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_final_x(iter_final_xSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type theta0(theta0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
     Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateReflMaxRWM_SVM(x0, y0, y_data, beta, sigma, phi, h, L, iter_store_x, iter_final_x, thin));
+    rcpp_result_gen = Rcpp::wrap(ula_cpp(target_params, sampler_params, theta0, iter, thin));
     return rcpp_result_gen;
 END_RCPP
 }
-// SimulateMALA_SVM
-Rcpp::List SimulateMALA_SVM(const Eigen::Map<Eigen::ArrayXd> x0, const Eigen::Map<Eigen::ArrayXd> y, const double& beta, const double& sigma, const double& phi, const double& h, const int& iter_store_x, const int& iter_final_x, const int& thin);
-RcppExport SEXP _wassersteinbound_SimulateMALA_SVM(SEXP x0SEXP, SEXP ySEXP, SEXP betaSEXP, SEXP sigmaSEXP, SEXP phiSEXP, SEXP hSEXP, SEXP iter_store_xSEXP, SEXP iter_final_xSEXP, SEXP thinSEXP) {
+// obab_cpp
+Rcpp::List obab_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_obab_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type y(ySEXP);
-    Rcpp::traits::input_parameter< const double& >::type beta(betaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type sigma(sigmaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type phi(phiSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_store_x(iter_store_xSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_final_x(iter_final_xSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
     Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateMALA_SVM(x0, y, beta, sigma, phi, h, iter_store_x, iter_final_x, thin));
+    rcpp_result_gen = Rcpp::wrap(obab_cpp(target_params, sampler_params, x0, iter, thin));
     return rcpp_result_gen;
 END_RCPP
 }
-// SimulateReflMaxMALA_SVM
-Rcpp::List SimulateReflMaxMALA_SVM(const Eigen::Map<Eigen::ArrayXd> x0, const Eigen::Map<Eigen::ArrayXd> y0, const Eigen::Map<Eigen::ArrayXd> y_data, const double& beta, const double& sigma, const double& phi, const double& h, const int& L, const int& iter_store_x, const int& iter_final_x, const int& thin);
-RcppExport SEXP _wassersteinbound_SimulateReflMaxMALA_SVM(SEXP x0SEXP, SEXP y0SEXP, SEXP y_dataSEXP, SEXP betaSEXP, SEXP sigmaSEXP, SEXP phiSEXP, SEXP hSEXP, SEXP LSEXP, SEXP iter_store_xSEXP, SEXP iter_final_xSEXP, SEXP thinSEXP) {
+// horowitz_cpp
+Rcpp::List horowitz_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_horowitz_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type y0(y0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type y_data(y_dataSEXP);
-    Rcpp::traits::input_parameter< const double& >::type beta(betaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type sigma(sigmaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type phi(phiSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type L(LSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_store_x(iter_store_xSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter_final_x(iter_final_xSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
     Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateReflMaxMALA_SVM(x0, y0, y_data, beta, sigma, phi, h, L, iter_store_x, iter_final_x, thin));
+    rcpp_result_gen = Rcpp::wrap(horowitz_cpp(target_params, sampler_params, x0, iter, thin));
     return rcpp_result_gen;
 END_RCPP
 }
-// SimulateReflMaxRWMMeetingTime_SVM
-int SimulateReflMaxRWMMeetingTime_SVM(const Eigen::Map<Eigen::ArrayXd> x0, const Eigen::Map<Eigen::ArrayXd> y0, const Eigen::Map<Eigen::ArrayXd> y_data, const double& beta, const double& sigma, const double& phi, const double& h, const int& L, const int& maxiter);
-RcppExport SEXP _wassersteinbound_SimulateReflMaxRWMMeetingTime_SVM(SEXP x0SEXP, SEXP y0SEXP, SEXP y_dataSEXP, SEXP betaSEXP, SEXP sigmaSEXP, SEXP phiSEXP, SEXP hSEXP, SEXP LSEXP, SEXP maxiterSEXP) {
+// fisher_mala_cpp
+Rcpp::List fisher_mala_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_fisher_mala_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type y0(y0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type y_data(y_dataSEXP);
-    Rcpp::traits::input_parameter< const double& >::type beta(betaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type sigma(sigmaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type phi(phiSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type L(LSEXP);
-    Rcpp::traits::input_parameter< const int& >::type maxiter(maxiterSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateReflMaxRWMMeetingTime_SVM(x0, y0, y_data, beta, sigma, phi, h, L, maxiter));
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(fisher_mala_cpp(target_params, sampler_params, x0, iter, thin));
     return rcpp_result_gen;
 END_RCPP
 }
-// SimulateReflMaxMALAMeetingTime_SVM
-int SimulateReflMaxMALAMeetingTime_SVM(const Eigen::Map<Eigen::ArrayXd> x0, const Eigen::Map<Eigen::ArrayXd> y0, const Eigen::Map<Eigen::ArrayXd> y_data, const double& beta, const double& sigma, const double& phi, const double& h, const int& L);
-RcppExport SEXP _wassersteinbound_SimulateReflMaxMALAMeetingTime_SVM(SEXP x0SEXP, SEXP y0SEXP, SEXP y_dataSEXP, SEXP betaSEXP, SEXP sigmaSEXP, SEXP phiSEXP, SEXP hSEXP, SEXP LSEXP) {
+// rwm_twoscalegcrn_cpp
+Rcpp::List rwm_twoscalegcrn_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const Eigen::Map<Eigen::VectorXd>& y0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_rwm_twoscalegcrn_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP y0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type x0(x0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type y0(y0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXd> >::type y_data(y_dataSEXP);
-    Rcpp::traits::input_parameter< const double& >::type beta(betaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type sigma(sigmaSEXP);
-    Rcpp::traits::input_parameter< const double& >::type phi(phiSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    Rcpp::traits::input_parameter< const int& >::type L(LSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimulateReflMaxMALAMeetingTime_SVM(x0, y0, y_data, beta, sigma, phi, h, L));
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type y0(y0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(rwm_twoscalegcrn_cpp(target_params, sampler_params, x0, y0, iter, thin));
     return rcpp_result_gen;
 END_RCPP
 }
-// EvaluateW2sq
-double EvaluateW2sq(const Eigen::Map<Eigen::VectorXd>& a, const Eigen::Map<Eigen::MatrixXd>& A, const Eigen::Map<Eigen::VectorXd>& b, const Eigen::Map<Eigen::MatrixXd>& B);
-RcppExport SEXP _wassersteinbound_EvaluateW2sq(SEXP aSEXP, SEXP ASEXP, SEXP bSEXP, SEXP BSEXP) {
+// ula_twoscalecrn_cpp
+Rcpp::List ula_twoscalecrn_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const Eigen::Map<Eigen::VectorXd>& y0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_ula_twoscalecrn_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP y0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type y0(y0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(ula_twoscalecrn_cpp(target_params, sampler_params, x0, y0, iter, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mala_twoscalecrn_cpp
+Rcpp::List mala_twoscalecrn_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const Eigen::Map<Eigen::VectorXd>& y0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_mala_twoscalecrn_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP y0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type y0(y0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(mala_twoscalecrn_cpp(target_params, sampler_params, x0, y0, iter, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// horowitz_CRN_cpp
+Rcpp::List horowitz_CRN_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const Eigen::Map<Eigen::VectorXd>& y0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_horowitz_CRN_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP y0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type y0(y0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(horowitz_CRN_cpp(target_params, sampler_params, x0, y0, iter, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// obab_CRN_cpp
+Rcpp::List obab_CRN_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const Eigen::Map<Eigen::VectorXd>& y0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_obab_CRN_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP y0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type y0(y0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(obab_CRN_cpp(target_params, sampler_params, x0, y0, iter, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// ula_mala_CRN_cpp
+Rcpp::List ula_mala_CRN_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const Eigen::Map<Eigen::VectorXd>& y0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_ula_mala_CRN_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP y0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type y0(y0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(ula_mala_CRN_cpp(target_params, sampler_params, x0, y0, iter, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// obab_horowitz_CRN_cpp
+Rcpp::List obab_horowitz_CRN_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const Eigen::Map<Eigen::VectorXd>& y0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_obab_horowitz_CRN_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP y0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type y0(y0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(obab_horowitz_CRN_cpp(target_params, sampler_params, x0, y0, iter, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// mala_CRN_2targets_cpp
+Rcpp::List mala_CRN_2targets_cpp(const Rcpp::List& target_x_params, const Rcpp::List& target_y_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const Eigen::Map<Eigen::VectorXd>& y0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_mala_CRN_2targets_cpp(SEXP target_x_paramsSEXP, SEXP target_y_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP y0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_x_params(target_x_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_y_params(target_y_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type y0(y0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(mala_CRN_2targets_cpp(target_x_params, target_y_params, sampler_params, x0, y0, iter, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// sgld_cpp
+Rcpp::List sgld_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& theta0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_sgld_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP theta0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type theta0(theta0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(sgld_cpp(target_params, sampler_params, theta0, iter, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// sgldcv_cpp
+Rcpp::List sgldcv_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& theta0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_sgldcv_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP theta0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type theta0(theta0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(sgldcv_cpp(target_params, sampler_params, theta0, iter, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// sgld_mala_CRN_cpp
+Rcpp::List sgld_mala_CRN_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const Eigen::Map<Eigen::VectorXd>& y0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_sgld_mala_CRN_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP y0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type y0(y0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(sgld_mala_CRN_cpp(target_params, sampler_params, x0, y0, iter, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// sgldcv_mala_CRN_cpp
+Rcpp::List sgldcv_mala_CRN_cpp(const Rcpp::List& target_params, const Rcpp::List& sampler_params, const Eigen::Map<Eigen::VectorXd>& x0, const Eigen::Map<Eigen::VectorXd>& y0, const int& iter, const int& thin);
+RcppExport SEXP _wassersteinbound_sgldcv_mala_CRN_cpp(SEXP target_paramsSEXP, SEXP sampler_paramsSEXP, SEXP x0SEXP, SEXP y0SEXP, SEXP iterSEXP, SEXP thinSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type sampler_params(sampler_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type x0(x0SEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type y0(y0SEXP);
+    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
+    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
+    rcpp_result_gen = Rcpp::wrap(sgldcv_mala_CRN_cpp(target_params, sampler_params, x0, y0, iter, thin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// potential_cpp
+double potential_cpp(const Rcpp::List& target_params, const Eigen::Map<Eigen::VectorXd>& theta);
+RcppExport SEXP _wassersteinbound_potential_cpp(SEXP target_paramsSEXP, SEXP thetaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type theta(thetaSEXP);
+    rcpp_result_gen = Rcpp::wrap(potential_cpp(target_params, theta));
+    return rcpp_result_gen;
+END_RCPP
+}
+// gradpotential_cpp
+Eigen::VectorXd gradpotential_cpp(const Rcpp::List& target_params, const Eigen::Map<Eigen::VectorXd>& theta);
+RcppExport SEXP _wassersteinbound_gradpotential_cpp(SEXP target_paramsSEXP, SEXP thetaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type theta(thetaSEXP);
+    rcpp_result_gen = Rcpp::wrap(gradpotential_cpp(target_params, theta));
+    return rcpp_result_gen;
+END_RCPP
+}
+// hesspotential_cpp
+Eigen::MatrixXd hesspotential_cpp(const Rcpp::List& target_params, const Eigen::Map<Eigen::VectorXd>& theta);
+RcppExport SEXP _wassersteinbound_hesspotential_cpp(SEXP target_paramsSEXP, SEXP thetaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Rcpp::List& >::type target_params(target_paramsSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type theta(thetaSEXP);
+    rcpp_result_gen = Rcpp::wrap(hesspotential_cpp(target_params, theta));
+    return rcpp_result_gen;
+END_RCPP
+}
+// w2sq_1d_dual_cpp
+Rcpp::List w2sq_1d_dual_cpp(Eigen::ArrayXd x_sorted, Eigen::ArrayXd y_sorted);
+RcppExport SEXP _wassersteinbound_w2sq_1d_dual_cpp(SEXP x_sortedSEXP, SEXP y_sortedSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< Eigen::ArrayXd >::type x_sorted(x_sortedSEXP);
+    Rcpp::traits::input_parameter< Eigen::ArrayXd >::type y_sorted(y_sortedSEXP);
+    rcpp_result_gen = Rcpp::wrap(w2sq_1d_dual_cpp(x_sorted, y_sorted));
+    return rcpp_result_gen;
+END_RCPP
+}
+// matrix_power_cpp
+Eigen::MatrixXd matrix_power_cpp(const Eigen::Map<Eigen::MatrixXd> A, const int& n);
+RcppExport SEXP _wassersteinbound_matrix_power_cpp(SEXP ASEXP, SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd> >::type A(ASEXP);
+    Rcpp::traits::input_parameter< const int& >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(matrix_power_cpp(A, n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// w2sq_gaussian_cpp
+double w2sq_gaussian_cpp(const Eigen::Map<Eigen::VectorXd>& a, const Eigen::Map<Eigen::MatrixXd>& A, const Eigen::Map<Eigen::VectorXd>& b, const Eigen::Map<Eigen::MatrixXd>& B);
+RcppExport SEXP _wassersteinbound_w2sq_gaussian_cpp(SEXP aSEXP, SEXP ASEXP, SEXP bSEXP, SEXP BSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type a(aSEXP);
     Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type A(ASEXP);
     Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type b(bSEXP);
     Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type B(BSEXP);
-    rcpp_result_gen = Rcpp::wrap(EvaluateW2sq(a, A, b, B));
+    rcpp_result_gen = Rcpp::wrap(w2sq_gaussian_cpp(a, A, b, B));
     return rcpp_result_gen;
 END_RCPP
 }
-// EvaluateW2sqGibbs
-Rcpp::List EvaluateW2sqGibbs(const Eigen::Map<Eigen::VectorXd>& mu_0, const Eigen::Map<Eigen::MatrixXd>& Sigma_0, const Eigen::Map<Eigen::VectorXd>& mu, const Eigen::Map<Eigen::MatrixXd>& Sigma, const int& iter, const int& thin);
-RcppExport SEXP _wassersteinbound_EvaluateW2sqGibbs(SEXP mu_0SEXP, SEXP Sigma_0SEXP, SEXP muSEXP, SEXP SigmaSEXP, SEXP iterSEXP, SEXP thinSEXP) {
+// w2sq_convergence_gaussian_recursive_cpp
+Rcpp::List w2sq_convergence_gaussian_recursive_cpp(const Eigen::Map<Eigen::VectorXd>& mu_0, const Eigen::Map<Eigen::MatrixXd>& Sigma_0, const Eigen::Map<Eigen::VectorXd>& mu_inf, const Eigen::Map<Eigen::MatrixXd>& Sigma_inf, const Eigen::Map<Eigen::MatrixXd>& B, const int& d, const int& iter, const int& thin, const double& tol);
+RcppExport SEXP _wassersteinbound_w2sq_convergence_gaussian_recursive_cpp(SEXP mu_0SEXP, SEXP Sigma_0SEXP, SEXP mu_infSEXP, SEXP Sigma_infSEXP, SEXP BSEXP, SEXP dSEXP, SEXP iterSEXP, SEXP thinSEXP, SEXP tolSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type mu_0(mu_0SEXP);
     Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type Sigma_0(Sigma_0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type mu(muSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type Sigma(SigmaSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type mu_inf(mu_infSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type Sigma_inf(Sigma_infSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type B(BSEXP);
+    Rcpp::traits::input_parameter< const int& >::type d(dSEXP);
     Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
     Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    rcpp_result_gen = Rcpp::wrap(EvaluateW2sqGibbs(mu_0, Sigma_0, mu, Sigma, iter, thin));
+    Rcpp::traits::input_parameter< const double& >::type tol(tolSEXP);
+    rcpp_result_gen = Rcpp::wrap(w2sq_convergence_gaussian_recursive_cpp(mu_0, Sigma_0, mu_inf, Sigma_inf, B, d, iter, thin, tol));
     return rcpp_result_gen;
 END_RCPP
 }
-// EvaluateW2sqGibbsFull
-Rcpp::List EvaluateW2sqGibbsFull(const Eigen::Map<Eigen::VectorXd>& mu_0, const Eigen::Map<Eigen::MatrixXd>& Sigma_0, const Eigen::Map<Eigen::VectorXd>& mu, const Eigen::Map<Eigen::MatrixXd>& Sigma, const int& iter, const int& thin, const int& nthreads);
-RcppExport SEXP _wassersteinbound_EvaluateW2sqGibbsFull(SEXP mu_0SEXP, SEXP Sigma_0SEXP, SEXP muSEXP, SEXP SigmaSEXP, SEXP iterSEXP, SEXP thinSEXP, SEXP nthreadsSEXP) {
+// colwise_rank_cpp
+Eigen::ArrayXXi colwise_rank_cpp(const Eigen::Map<Eigen::ArrayXXd>& mat);
+RcppExport SEXP _wassersteinbound_colwise_rank_cpp(SEXP matSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type mu_0(mu_0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type Sigma_0(Sigma_0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type mu(muSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type Sigma(SigmaSEXP);
-    Rcpp::traits::input_parameter< const int& >::type iter(iterSEXP);
-    Rcpp::traits::input_parameter< const int& >::type thin(thinSEXP);
-    Rcpp::traits::input_parameter< const int& >::type nthreads(nthreadsSEXP);
-    rcpp_result_gen = Rcpp::wrap(EvaluateW2sqGibbsFull(mu_0, Sigma_0, mu, Sigma, iter, thin, nthreads));
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::ArrayXXd>& >::type mat(matSEXP);
+    rcpp_result_gen = Rcpp::wrap(colwise_rank_cpp(mat));
     return rcpp_result_gen;
 END_RCPP
 }
-// EvaluateW2sqULA
-Rcpp::List EvaluateW2sqULA(const Eigen::Map<Eigen::VectorXd>& mu_0, const Eigen::Map<Eigen::SparseMatrix<double>>& Sigma_0, const Eigen::Map<Eigen::VectorXd>& mu, const Eigen::Map<Eigen::MatrixXd>& Sigma_ULA, const Eigen::Map<Eigen::SparseMatrix<double>>& M, const Rcpp::IntegerVector& which_iters, const double& h);
-RcppExport SEXP _wassersteinbound_EvaluateW2sqULA(SEXP mu_0SEXP, SEXP Sigma_0SEXP, SEXP muSEXP, SEXP Sigma_ULASEXP, SEXP MSEXP, SEXP which_itersSEXP, SEXP hSEXP) {
+// permute_matrix_colwise_inplace_cpp
+void permute_matrix_colwise_inplace_cpp(Eigen::Map<Eigen::MatrixXd>& mat, const Eigen::Map<Eigen::MatrixXi>& idx_colwise);
+RcppExport SEXP _wassersteinbound_permute_matrix_colwise_inplace_cpp(SEXP matSEXP, SEXP idx_colwiseSEXP) {
+BEGIN_RCPP
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::MatrixXd>& >::type mat(matSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXi>& >::type idx_colwise(idx_colwiseSEXP);
+    permute_matrix_colwise_inplace_cpp(mat, idx_colwise);
+    return R_NilValue;
+END_RCPP
+}
+// colwise_squared_norm_with_skip_cpp
+Eigen::VectorXd colwise_squared_norm_with_skip_cpp(const Eigen::Map<Eigen::MatrixXd>& x, const Eigen::Map<Eigen::MatrixXd>& y, Eigen::Map<Eigen::MatrixXi>& rm_idx_x, Eigen::Map<Eigen::MatrixXi>& rm_idx_y);
+RcppExport SEXP _wassersteinbound_colwise_squared_norm_with_skip_cpp(SEXP xSEXP, SEXP ySEXP, SEXP rm_idx_xSEXP, SEXP rm_idx_ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type mu_0(mu_0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::SparseMatrix<double>>& >::type Sigma_0(Sigma_0SEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::VectorXd>& >::type mu(muSEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type Sigma_ULA(Sigma_ULASEXP);
-    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::SparseMatrix<double>>& >::type M(MSEXP);
-    Rcpp::traits::input_parameter< const Rcpp::IntegerVector& >::type which_iters(which_itersSEXP);
-    Rcpp::traits::input_parameter< const double& >::type h(hSEXP);
-    rcpp_result_gen = Rcpp::wrap(EvaluateW2sqULA(mu_0, Sigma_0, mu, Sigma_ULA, M, which_iters, h));
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type x(xSEXP);
+    Rcpp::traits::input_parameter< const Eigen::Map<Eigen::MatrixXd>& >::type y(ySEXP);
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::MatrixXi>& >::type rm_idx_x(rm_idx_xSEXP);
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::MatrixXi>& >::type rm_idx_y(rm_idx_ySEXP);
+    rcpp_result_gen = Rcpp::wrap(colwise_squared_norm_with_skip_cpp(x, y, rm_idx_x, rm_idx_y));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_wassersteinbound_Flapjack", (DL_FUNC) &_wassersteinbound_Flapjack, 1},
-    {"_wassersteinbound_SimulateGibbs_ar1", (DL_FUNC) &_wassersteinbound_SimulateGibbs_ar1, 6},
-    {"_wassersteinbound_SimulateReflMaxGibbs_ar1", (DL_FUNC) &_wassersteinbound_SimulateReflMaxGibbs_ar1, 8},
-    {"_wassersteinbound_EvaluateJackknife1d", (DL_FUNC) &_wassersteinbound_EvaluateJackknife1d, 4},
-    {"_wassersteinbound_RWMLogistic", (DL_FUNC) &_wassersteinbound_RWMLogistic, 3},
-    {"_wassersteinbound_MALALogistic", (DL_FUNC) &_wassersteinbound_MALALogistic, 3},
-    {"_wassersteinbound_SimulateULA_scaling", (DL_FUNC) &_wassersteinbound_SimulateULA_scaling, 6},
-    {"_wassersteinbound_SimulateMALA_scaling", (DL_FUNC) &_wassersteinbound_SimulateMALA_scaling, 6},
-    {"_wassersteinbound_SimulateReflMaxULA_scaling", (DL_FUNC) &_wassersteinbound_SimulateReflMaxULA_scaling, 8},
-    {"_wassersteinbound_SimulateReflMaxMALA_scaling", (DL_FUNC) &_wassersteinbound_SimulateReflMaxMALA_scaling, 8},
-    {"_wassersteinbound_RWMMixture1d", (DL_FUNC) &_wassersteinbound_RWMMixture1d, 6},
-    {"_wassersteinbound_MALAMixture1d", (DL_FUNC) &_wassersteinbound_MALAMixture1d, 6},
-    {"_wassersteinbound_SolveAssignmentNetworkflow", (DL_FUNC) &_wassersteinbound_SolveAssignmentNetworkflow, 1},
-    {"_wassersteinbound_SetSeed_cpp", (DL_FUNC) &_wassersteinbound_SetSeed_cpp, 2},
-    {"_wassersteinbound_EvaluateSquaredCost", (DL_FUNC) &_wassersteinbound_EvaluateSquaredCost, 3},
-    {"_wassersteinbound_RWMStdGaussian", (DL_FUNC) &_wassersteinbound_RWMStdGaussian, 3},
-    {"_wassersteinbound_MALAStdGaussian", (DL_FUNC) &_wassersteinbound_MALAStdGaussian, 3},
-    {"_wassersteinbound_SampleLatentVariables", (DL_FUNC) &_wassersteinbound_SampleLatentVariables, 3},
-    {"_wassersteinbound_SimulateRWM_SVM", (DL_FUNC) &_wassersteinbound_SimulateRWM_SVM, 9},
-    {"_wassersteinbound_SimulateReflMaxRWM_SVM", (DL_FUNC) &_wassersteinbound_SimulateReflMaxRWM_SVM, 11},
-    {"_wassersteinbound_SimulateMALA_SVM", (DL_FUNC) &_wassersteinbound_SimulateMALA_SVM, 9},
-    {"_wassersteinbound_SimulateReflMaxMALA_SVM", (DL_FUNC) &_wassersteinbound_SimulateReflMaxMALA_SVM, 11},
-    {"_wassersteinbound_SimulateReflMaxRWMMeetingTime_SVM", (DL_FUNC) &_wassersteinbound_SimulateReflMaxRWMMeetingTime_SVM, 9},
-    {"_wassersteinbound_SimulateReflMaxMALAMeetingTime_SVM", (DL_FUNC) &_wassersteinbound_SimulateReflMaxMALAMeetingTime_SVM, 8},
-    {"_wassersteinbound_EvaluateW2sq", (DL_FUNC) &_wassersteinbound_EvaluateW2sq, 4},
-    {"_wassersteinbound_EvaluateW2sqGibbs", (DL_FUNC) &_wassersteinbound_EvaluateW2sqGibbs, 6},
-    {"_wassersteinbound_EvaluateW2sqGibbsFull", (DL_FUNC) &_wassersteinbound_EvaluateW2sqGibbsFull, 7},
-    {"_wassersteinbound_EvaluateW2sqULA", (DL_FUNC) &_wassersteinbound_EvaluateW2sqULA, 7},
+    {"_wassersteinbound_assignment_squared_euclidean_toms1015_cpp", (DL_FUNC) &_wassersteinbound_assignment_squared_euclidean_toms1015_cpp, 3},
+    {"_wassersteinbound_assignment_squared_euclidean_networkflow_cpp", (DL_FUNC) &_wassersteinbound_assignment_squared_euclidean_networkflow_cpp, 3},
+    {"_wassersteinbound_assignment_squared_euclidean_jackknife_cpp", (DL_FUNC) &_wassersteinbound_assignment_squared_euclidean_jackknife_cpp, 3},
+    {"_wassersteinbound_assignment_squared_euclidean_jackknife_1d_cpp", (DL_FUNC) &_wassersteinbound_assignment_squared_euclidean_jackknife_1d_cpp, 4},
+    {"_wassersteinbound_EvaluateSquaredCost", (DL_FUNC) &_wassersteinbound_EvaluateSquaredCost, 2},
+    {"_wassersteinbound_gibbs_periodicAR1_cpp", (DL_FUNC) &_wassersteinbound_gibbs_periodicAR1_cpp, 5},
+    {"_wassersteinbound_gibbs_periodicAR1_CRN_cpp", (DL_FUNC) &_wassersteinbound_gibbs_periodicAR1_CRN_cpp, 6},
+    {"_wassersteinbound_gibbs_periodicAR1_ReflMax_cpp", (DL_FUNC) &_wassersteinbound_gibbs_periodicAR1_ReflMax_cpp, 6},
+    {"_wassersteinbound_low_inc_gamma_cpp", (DL_FUNC) &_wassersteinbound_low_inc_gamma_cpp, 2},
+    {"_wassersteinbound_low_inc_gamma_inv_cpp", (DL_FUNC) &_wassersteinbound_low_inc_gamma_inv_cpp, 2},
+    {"_wassersteinbound_cpp_prod", (DL_FUNC) &_wassersteinbound_cpp_prod, 2},
+    {"_wassersteinbound_cpp_crossprod", (DL_FUNC) &_wassersteinbound_cpp_crossprod, 1},
+    {"_wassersteinbound_cpp_cov", (DL_FUNC) &_wassersteinbound_cpp_cov, 1},
+    {"_wassersteinbound_SetSeed_pcg32", (DL_FUNC) &_wassersteinbound_SetSeed_pcg32, 2},
+    {"_wassersteinbound_rwm_cpp", (DL_FUNC) &_wassersteinbound_rwm_cpp, 5},
+    {"_wassersteinbound_mala_cpp", (DL_FUNC) &_wassersteinbound_mala_cpp, 5},
+    {"_wassersteinbound_ula_cpp", (DL_FUNC) &_wassersteinbound_ula_cpp, 5},
+    {"_wassersteinbound_obab_cpp", (DL_FUNC) &_wassersteinbound_obab_cpp, 5},
+    {"_wassersteinbound_horowitz_cpp", (DL_FUNC) &_wassersteinbound_horowitz_cpp, 5},
+    {"_wassersteinbound_fisher_mala_cpp", (DL_FUNC) &_wassersteinbound_fisher_mala_cpp, 5},
+    {"_wassersteinbound_rwm_twoscalegcrn_cpp", (DL_FUNC) &_wassersteinbound_rwm_twoscalegcrn_cpp, 6},
+    {"_wassersteinbound_ula_twoscalecrn_cpp", (DL_FUNC) &_wassersteinbound_ula_twoscalecrn_cpp, 6},
+    {"_wassersteinbound_mala_twoscalecrn_cpp", (DL_FUNC) &_wassersteinbound_mala_twoscalecrn_cpp, 6},
+    {"_wassersteinbound_horowitz_CRN_cpp", (DL_FUNC) &_wassersteinbound_horowitz_CRN_cpp, 6},
+    {"_wassersteinbound_obab_CRN_cpp", (DL_FUNC) &_wassersteinbound_obab_CRN_cpp, 6},
+    {"_wassersteinbound_ula_mala_CRN_cpp", (DL_FUNC) &_wassersteinbound_ula_mala_CRN_cpp, 6},
+    {"_wassersteinbound_obab_horowitz_CRN_cpp", (DL_FUNC) &_wassersteinbound_obab_horowitz_CRN_cpp, 6},
+    {"_wassersteinbound_mala_CRN_2targets_cpp", (DL_FUNC) &_wassersteinbound_mala_CRN_2targets_cpp, 7},
+    {"_wassersteinbound_sgld_cpp", (DL_FUNC) &_wassersteinbound_sgld_cpp, 5},
+    {"_wassersteinbound_sgldcv_cpp", (DL_FUNC) &_wassersteinbound_sgldcv_cpp, 5},
+    {"_wassersteinbound_sgld_mala_CRN_cpp", (DL_FUNC) &_wassersteinbound_sgld_mala_CRN_cpp, 6},
+    {"_wassersteinbound_sgldcv_mala_CRN_cpp", (DL_FUNC) &_wassersteinbound_sgldcv_mala_CRN_cpp, 6},
+    {"_wassersteinbound_potential_cpp", (DL_FUNC) &_wassersteinbound_potential_cpp, 2},
+    {"_wassersteinbound_gradpotential_cpp", (DL_FUNC) &_wassersteinbound_gradpotential_cpp, 2},
+    {"_wassersteinbound_hesspotential_cpp", (DL_FUNC) &_wassersteinbound_hesspotential_cpp, 2},
+    {"_wassersteinbound_w2sq_1d_dual_cpp", (DL_FUNC) &_wassersteinbound_w2sq_1d_dual_cpp, 2},
+    {"_wassersteinbound_matrix_power_cpp", (DL_FUNC) &_wassersteinbound_matrix_power_cpp, 2},
+    {"_wassersteinbound_w2sq_gaussian_cpp", (DL_FUNC) &_wassersteinbound_w2sq_gaussian_cpp, 4},
+    {"_wassersteinbound_w2sq_convergence_gaussian_recursive_cpp", (DL_FUNC) &_wassersteinbound_w2sq_convergence_gaussian_recursive_cpp, 9},
+    {"_wassersteinbound_colwise_rank_cpp", (DL_FUNC) &_wassersteinbound_colwise_rank_cpp, 1},
+    {"_wassersteinbound_permute_matrix_colwise_inplace_cpp", (DL_FUNC) &_wassersteinbound_permute_matrix_colwise_inplace_cpp, 2},
+    {"_wassersteinbound_colwise_squared_norm_with_skip_cpp", (DL_FUNC) &_wassersteinbound_colwise_squared_norm_with_skip_cpp, 4},
     {NULL, NULL, 0}
 };
 

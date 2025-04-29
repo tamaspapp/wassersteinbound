@@ -1,12 +1,16 @@
 Package: wassersteinbound
 Type: Package
-Title: Reproduce experiments in "Bounds on Wasserstein distances between continuous distributions using independent samples" by T. Papp and C. Sherlock (2022)
-Version: 1.0
-Date: 2022-03-21
-Author: Tamas Papp
-Maintainer: Tamas Papp <t.papp@lancaster.ac.uk>
-Description: See title.
-License: AGPL-3
-Imports: Rcpp (>= 1.0.6), RcppEigen, sitmo, BH, dqrng, parallel, doParallel, Matrix, ggplot2, scales, reshape2, ggthemes, ars, latex2exp
-LinkingTo: Rcpp, RcppEigen, sitmo, BH, dqrng
-RoxygenNote: 7.1.2
+Title: Centered plug-in estimation of Wasserstein distances
+Version: 1.1
+Date: 2025-04-29
+Author: Tamas P. Papp
+Maintainer: Tamas P. Papp <t.papp@lancaster.ac.uk>
+Description: Reproduce experiments in "Centered plug-in estimation of Wasserstein distances" by Tamas P. Papp and Chris Sherlock (2024).
+License: GPL-3
+Imports: Rcpp (>= 1.0.6), RcppEigen, BH, parallel, doParallel, Matrix,
+        ggplot2, scales, reshape2, latex2exp
+LinkingTo: Rcpp, RcppEigen, BH
+RoxygenNote: 7.2.3
+Encoding: UTF-8
+NeedsCompilation: yes
+Packaged: 2025-04-29 14:25:28 UTC; stor-i
